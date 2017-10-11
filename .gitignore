@@ -1,0 +1,7 @@
+**/node_modules
+/wp-config.php
+*.htaccess
+Thumbs.db
+Desktop.ini
+*.ink
+*.log
