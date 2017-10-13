@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="<?php home_url(); ?>"> <?= get_bloginfo('name'); ?> </a>
+        <a class="navbar-brand" href="<?= home_url(); ?>"> <?= get_bloginfo('name'); ?> </a>
           <?php wp_nav_menu([
             'menu_class' => 'navbar-nav ml-auto' , 
             'theme_location' => 'main-menu'
