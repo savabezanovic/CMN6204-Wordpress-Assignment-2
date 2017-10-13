@@ -8,7 +8,7 @@ function custom_title(){
 	return $title;
 }
 
-function excerpt($content, $length = 10) {
+function excerpt($content, $length = 180) {
 	$content = wp_strip_all_tags($content);
 	$content = substr($content, 0, $length);
 	echo $content;
