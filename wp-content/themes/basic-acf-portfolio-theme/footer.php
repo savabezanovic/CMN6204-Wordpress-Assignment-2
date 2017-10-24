@@ -6,10 +6,7 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/wp-content/themes/basic-acf-portfolio-theme/assets-week-3/vendor/jquery/jquery.js"></script>
-    <script src="/wp-content/themes/basic-acf-portfolio-theme/assets-week-3/vendor/popper/popper.min.js"></script>
-    <script src="/wp-content/themes/basic-acf-portfolio-theme/assets-week-3/vendor/bootstrap/js/bootstrap.min.js"></script>
-
+   <?php wp_footer(); ?>
   </body>
 
 </html>
