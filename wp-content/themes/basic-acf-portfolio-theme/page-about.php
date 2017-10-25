@@ -19,10 +19,15 @@ the_post();
     <li class="breadcrumb-item active">About</li>
   </ol>
 
+  <?php
+    $url = get_field('my_portrait')['sizes']['large'];
+    $alt = get_field('my_portrait')['alt'];
+  ?>
+
   <!-- Intro Content -->
   <div class="row">
     <div class="col-lg-6">
-      <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="">
+      <img class="img-fluid" src="<?= $url ?>" alt="<?= $alt ?>">
     </div>
     <div class="col-lg-6">
       <?php the_content(); ?>
