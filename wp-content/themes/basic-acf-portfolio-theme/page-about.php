@@ -20,7 +20,7 @@ the_post();
   </ol>
 
   <?php
-    $url = get_field('my_portrait')['sizes']['large'];
+    $url = get_field('my_portrait')['sizes']['hero'];
     $alt = get_field('my_portrait')['alt'];
   ?>
 
@@ -38,22 +38,12 @@ the_post();
     <h2>Our Customers</h2>
     <div class="row">
       <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        <?php 
+    
+          $url = get_field('hero_image')['sizes']['thumbnail'];
+          $alt = get_field('hero_image')['alt'];
+        ?>
+        <img class="img-fluid" src="$url" alt="">
       </div>
     </div>
     <!-- /.row -->
