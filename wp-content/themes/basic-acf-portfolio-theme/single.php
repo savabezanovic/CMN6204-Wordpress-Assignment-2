@@ -65,11 +65,17 @@ the_post();
      $posts_title = get_the_title();
      ?>
      
-     <!-- $post_title je dodat samo zbog lakseg uocavanja -->
+     <?php
+      $url = get_field('hero_image')['sizes']['thumbnail'];
+      $alt = get_field('hero_image')['alt'];
+     ?>
+
+
+   
      <div class="col-md-3 col-sm-6 mb-4">
        <?= $posts_title ?>
        <a href="<?= get_permalink() ?>">
-         <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+         <img class="img-fluid" src="<?= $url?>" alt="<?= $alt ?>">
        </a>
      </div>
 
