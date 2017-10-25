@@ -33,13 +33,14 @@ the_post();
    ?>
 
    <?php
-   $url = get_field('featured_image')['sizes']['medium_large'];
+   $url = get_field('hero_image')['sizes']['Portfolio Featured'];
+   $alt = get_field('hero_image')['alt'];
    ?>
 
    <div class="row">
      <div class="col-md-7">
        <a href="#">
-         <img class="img-fluid rounded mb-3 mb-md-0" src="<?= $url ?>" alt="">
+         <img class="img-fluid rounded mb-3 mb-md-0" src="<?= $url ?>" alt=" alt ">
        </a>
      </div>
      <div class="col-md-5">
