@@ -33,8 +33,8 @@ the_post();
    ?>
 
    <?php
-   $url = get_field('hero_image')['sizes']['Portfolio Featured'];
-   $alt = get_field('hero_image')['alt'];
+        $url = get_field('hero_image')['sizes']['Portfolio Featured'];
+        $alt = get_field('hero_image')['alt'];
    ?>
 
    <div class="row">

@@ -23,8 +23,8 @@ the_post();
 
  <pre>
    <?php
-   $url = get_field('hero_image')['sizes']['Portfolio Featured'];
-   $alt = get_field('hero_image')['alt'];
+      $url = get_field('hero_image')['sizes']['Portfolio Featured'];
+      $alt = get_field('hero_image')['alt'];
    ?>
  </pre>
 
@@ -37,6 +37,9 @@ the_post();
    </div>
 
    <div class="col-md-4">
+
+      <p></p>
+
      <?php  
      $content = get_the_content();
      echo $content;

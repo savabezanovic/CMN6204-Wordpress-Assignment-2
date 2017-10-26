@@ -18,7 +18,7 @@
 
 <?php 
     
-    $url = get_field('hero_image')['sizes']['hero'];
+    $url = get_field('hero_image')['sizes']['Hero'];
     $alt = get_field('hero_image')['alt'];
 ?>
 

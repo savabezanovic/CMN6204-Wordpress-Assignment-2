@@ -81,6 +81,22 @@ echo '<h1>Task #3</h1>';
 		echo '<br>';
 	}
 
+	echo '<h1>Task #3.1</h1>';
+	$query = new WP_Query([
+		'post_type' => 'post',
+		'orderby' => 'completed_date',
+		'orderby' => 'meta_value_num', 
+		'order' => 'ASC'       
+		
+	]);
+
+	while($query->have_posts()) {
+		$query->the_post();
+		$posts_date = get_field('completed_date');
+		echo get_the_title() . ' - ' . $posts_date;
+		echo '<br>';
+	}
+
 echo '<h1>Task #4</h1>';
 	$query = new WP_Query([
 		'post_type' => 'post',

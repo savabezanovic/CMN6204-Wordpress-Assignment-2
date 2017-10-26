@@ -20,7 +20,7 @@ the_post();
   </ol>
 
   <?php
-    $url = get_field('my_portrait')['sizes']['hero'];
+    $url = get_field('my_portrait')['sizes']['Hero'];
     $alt = get_field('my_portrait')['alt'];
   ?>
 
@@ -37,14 +37,26 @@ the_post();
     <!-- Our Customers -->
     <h2>Our Customers</h2>
     <div class="row">
-      <div class="col-lg-2 col-sm-4 mb-4">
+      
         <?php 
-    
-          $url = get_field('hero_image')['sizes']['thumbnail'];
-          $alt = get_field('hero_image')['alt'];
+          
+          $customers = get_field('customers');
+          
+            foreach ($customers as $customer) :
+              $url = $customer['logo']['sizes']['thumbnail']; 
         ?>
-        <img class="img-fluid" src="$url" alt="">
+      <div class="col-lg-2 col-sm-4 mb-4">
+        
+        <img class="img-fluid" src="<?= $url ?>" alt="">
+
       </div>
+      <?php 
+
+        endforeach; 
+
+      ?>
+
+      
     </div>
     <!-- /.row -->
 
