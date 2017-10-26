@@ -10,29 +10,29 @@
     </ol>
     <div class="carousel-inner" role="listbox">
     
-
+        <?php
+     $slider = get_field('slider');
+     foreach ($slider as $key => $slide) :
+       if ($key === 0) {
+          $class = 'active';
+       } else {
+          $class = '';
+       }
+         $image = $slide['slide_image']['sizes']['Hero'];
+         $title = $slide['slide_title'];
+         $description = $slide['slide_description'];
+       ?>
   
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>First Slide</h3>
-          <p>This is a description for the first slide.</p>
-        </div>
-      </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Second Slide</h3>
-          <p>This is a description for the second slide.</p>
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Third Slide</h3>
-          <p>This is a description for the third slide.</p>
-        </div>
-      </div>
+       <div class="carousel-item <?= $class ?>" style="background-image: url('<?= $image ?>')">
+         <div class="carousel-caption d-none d-md-block">
+           <h3><?= $title ?></h3>
+           <p><?= $description ?></p>
+         </div>
+       </div>
+
+      <?php endforeach; ?>
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,8 +56,16 @@
     <div class="col-lg-6">
       <?= the_content(); ?>
     </div>
+
+    <?php 
+          $url = get_field('welcome_image')['sizes']['Hero']; 
+          
+    ?>
+      
     <div class="col-lg-6 content">
-      <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+
+      <img class="img-fluid rounded mb-4" src="<?= $url ?>" alt="">
+     
     </div>
   </div>
   <!-- /.row -->
@@ -65,12 +73,18 @@
   <hr>
 
   <!-- Call to Action Section -->
+     <?php 
+
+      $text_field = get_field('text_field');
+      $call_to_action = get_field('call_to_action');
+
+     ?>
   <div class="row mb-4">
     <div class="col-md-8">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+      <p><?=$text_field?></p>
     </div>
     <div class="col-md-4">
-      <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+      <a class="btn btn-lg btn-secondary btn-block" href="<?=$call_to_action?>">Call to Action</a>
     </div>
   </div>
 
@@ -78,42 +92,29 @@
   <h2>Testimonials</h2>
 
   <div class="row">
+    <?php 
+          $slides = get_field('slider_bottom');   
+            foreach ($slides as $slide) :
+              $url = $slide['slide_image']['sizes']['thumbnail'];
+              $slide_title = $slide['slide_title'];
+              $slide_description = $slide['slide_description'];
+        ?>
     <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        <a href="#"><img class="card-img-top" src="<?= $url ?>" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="#">Nikola</a>
+            <a href="#"><?= $slide_title ?></a>
           </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+          <p class="card-text"><?= $slide_description ?></p>
         </div>
       </div>
-    </div>
-    <div class="col-lg-4 col-sm-6 portfolio-item">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Marko</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6 portfolio-item">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Vlada</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-        </div>
-      </div>
-    </div>
+    </div> 
+      <?php 
+        endforeach; 
+      ?>
   </div>
   <!-- /.row -->
-
 </div>
 
 <?php get_footer(); ?>

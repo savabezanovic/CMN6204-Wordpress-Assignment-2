@@ -72,4 +72,10 @@ function custom_scripts() {
 add_image_size('Portfolio Featured', 700, 500, true);
 add_image_size('Hero', 1920, 1080, true);
 
+function my_acf_init() {
+    
+    acf_update_setting('google_api_key', 'AIzaSyBQ7qtCRBOZYcw4axBDORKgFfboKKy6yKo');
+}
+add_action('acf/init', 'my_acf_init');
+
 ?>

@@ -36,6 +36,7 @@ the_post();
 
     <!-- Our Customers -->
     <h2>Our Customers</h2>
+    
     <div class="row">
       
         <?php 
@@ -45,11 +46,13 @@ the_post();
             foreach ($customers as $customer) :
               $url = $customer['logo']['sizes']['thumbnail']; 
         ?>
+
       <div class="col-lg-2 col-sm-4 mb-4">
         
         <img class="img-fluid" src="<?= $url ?>" alt="">
 
       </div>
+      
       <?php 
 
         endforeach; 
